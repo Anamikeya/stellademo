@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alchemic Rhythm | Free eBook</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-green: #1b3b2f;
+      --soft-gold: #d4af37;
+      --ivory: #f9f5ef;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      background: var(--deep-green);
+      color: var(--ivory);
+      font-family: 'Lato', sans-serif;
+    }
+    /* Banner */
+    header.banner {
+      width: 100%;
+      padding: 2rem 0;
+      background: rgba(0,0,0,0.2);
+    }
+    .banner-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      width: 1920;
+      height: 1080;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .banner-content img {
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      max-width: 100%;
+      height: auto;
+    }
+    .banner-book { width: 1920px; }
+    .banner-author { width: 1920px; }
+    /* Main container */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem;
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--soft-gold);
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .hero-image {
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    form { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem; }
+    input[type="email"] {
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--ivory);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--ivory);
+      font-size: 1rem;
+    }
+    input::placeholder { color: rgba(249,245,239,0.7); }
+    button {
+      padding: 0.75rem;
+      background: var(--soft-gold);
+      border: none;
+      border-radius: 4px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--deep-green);
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+    button:hover { opacity: 0.9; }
+    .section { margin-bottom: 3rem; }
+    /* About Author */
+    #about-author .author {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .author-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    /* Features */
+    .features-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .feature-item {
+      border: 1px solid rgba(249,245,239,0.2);
+      padding: 1rem;
+      border-radius: 4px;
+      text-align: left;
+      background: rgba(255,255,255,0.05);
+    }
+    .feature-item h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    /* Testimonials */
+    blockquote {
+      font-style: italic;
+      margin: 1rem auto;
+      max-width: 700px;
+      padding-left: 1rem;
+      border-left: 4px solid var(--soft-gold);
+    }
+    cite {
+      display: block;
+      text-align: right;
+      margin-top: 0.5rem;
+      color: rgba(249,245,239,0.7);
+    }
+    /* Footer */
+    .site-footer {
+      background: rgba(0,0,0,0.3);
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+    }
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .footer-col {
+      flex: 1 1 200px;
+      text-align: left;
+    }
+    .footer-col h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      color: var(--soft-gold);
+    }
+    .footer-col a {
+      color: var(--ivory);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.9rem;
+    }
+    .footer-col a:hover { text-decoration: underline; }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      color: rgba(249,245,239,0.6);
+    }
+    /* Responsive adjustments */
+    @media(max-width: 900px) {
+      .banner-book { width: 150px; }
+      .banner-author { width: 120px; }
+      .footer-col { flex: 1 1 100%; text-align: center; }
+    }
+    @media(max-width: 600px) {
+      header.banner { padding: 1rem 0; }
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Banner with Book Cover & Author Photo -->
+  <header class="banner">
+    <div class="banner-content">
+      <img src="https://img.freepik.com/free-vector/horizontal-sale-banner-template-world-book-day-celebration_23-2150184563.jpg?t=st=1745567828~exp=1745571428~hmac=b987e661662d88a039475c875ca06759f6c6a98e71244fc869fe7432eea727a5&w=1380" alt="Book Cover" class="banner-book">
+      <!-- <img src="https://img.freepik.com/free-vector/horizontal-sale-banner-template-world-book-day-celebration_23-2150184563.jpg?t=st=1745567828~exp=1745571428~hmac=b987e661662d88a039475c875ca06759f6c6a98e71244fc869fe7432eea727a5&w=1380" alt="Author Photo" class="banner-author"> -->
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <img src="https://img.freepik.com/free-vector/horizontal-sale-banner-template-world-book-day-celebration_23-2150184563.jpg?t=st=1745567828~exp=1745571428~hmac=b987e661662d88a039475c875ca06759f6c6a98e71244fc869fe7432eea727a5&w=1380" alt="Alchemic Rhythm Cover" class="hero-image">
+    <h1>ALCHEMIC RHYTHM</h1>
+    <h2>Psychology, Science &amp; Strategy in Action</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed diam nosum autida.</p>
+
+    <form action="#" method="post">
+      <input type="email" name="EMAIL" placeholder="Enter your email address" required>
+      <button type="submit">Order Now</button>
+    </form>
+
+    <!-- About the Author -->
+    <section id="about-author" class="section">
+      <h2>About the Author</h2>
+      <div class="author">
+        <img src="https://media.istockphoto.com/id/1289220781/photo/portrait-of-happy-smiling-woman-at-desk.jpg?s=612x612&w=0&k=20&c=FtC05luuxRpiKRj5F84e2CiPf0h_ZuX6o7o5JwlNaJM=" alt="Author Photo" class="author-photo">
+        <p>Jane Doe is a seasoned psychologist and strategist with over 15 years of experience in behavioral research and applied science.</p>
+      </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="section">
+      <h2>Key Takeaways</h2>
+      <div class="features-grid">
+        <div class="feature-item">
+          <h3>Insightful Psychology</h3>
+          <p>Discover evidence-based techniques to understand human behavior.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Strategic Frameworks</h3>
+          <p>Learn actionable strategies to apply science in daily decision-making.</p>
+        </div>
+        <div class="feature-item">
+          <h3>Growth Mindset</h3>
+          <p>Unlock your potential through a blend of research and practical insights.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+      <h2>What Readers Say</h2>
+      <blockquote>
+        “Alchemic Rhythm transformed the way I approach my work—truly eye-opening!”
+      </blockquote>
+      <cite>- Alex R.</cite>
+    </section>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <a href="#">Email Us</a>
+        <a href="#">Support</a>
+      </div>
+      <div class="footer-col">
+        <h3>Follow</h3>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+      </div>
+      <div class="footer-col">
+        <h3>Legal</h3>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Alchemic Rhythm. All rights reserved.</div>
+  </footer>
+</body>
+</html>
